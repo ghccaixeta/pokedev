@@ -4,5 +4,5 @@ import styled from "styled-components/native";
 export const Container = styled(SafeAreaView)`
     flex: 1;
     background-color: ${({ theme }) => theme.COLORS.BLUE_500};
-    padding: 24px;
+    padding-top: 24px;
 `
