@@ -1,5 +1,6 @@
+import { CaretRight } from "phosphor-react-native";
 import { TouchableOpacity } from "react-native";
-import styled, {css} from "styled-components/native";
+import styled, { css } from "styled-components/native";
 // import { UsersThree } from "phosphor-react-native";
 
 export const Container = styled(TouchableOpacity)`
@@ -14,6 +15,7 @@ export const Container = styled(TouchableOpacity)`
 
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 
     padding: 14px;
 
@@ -28,6 +30,15 @@ font-family: ${theme.FONT_FAMILY.REGULAR};
 
 `}
 
+`
+
+export const ForwardIcon = styled(CaretRight).attrs(({ theme })=>({
+    size: 36,
+    color: theme.COLORS.BLUE_700,
+    weight: "bold",
+}))`
+    max-width: 24px;
+    
 `
 
 // export const Icon = styled(UsersThree).attrs(({ theme }) =>({
