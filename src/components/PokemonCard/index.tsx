@@ -1,5 +1,6 @@
-import { TouchableOpacityProps } from 'react-native';
-import {Container, Title} from './styles'
+import { TouchableOpacityProps, View } from 'react-native';
+import { Container, Title } from './styles'
+import { ItemSeparator } from '@components/ItemSeparator';
 
 //Com o TouchableOpacityProps conseguimos utilizar as propiedades de um botão
 type Props = TouchableOpacityProps & {
@@ -10,11 +11,16 @@ type Props = TouchableOpacityProps & {
 
 export function PokemonCard({ title, ...rest }: Props) {
     return (
-        <Container {...rest}>
-            {/* <Icon></Icon> */}
-            <Title>
-                {title}
-            </Title>
-        </Container>
+        <>
+            <Container {...rest}>
+                {/* <Icon></Icon> */}
+
+                <Title>
+                    {title}
+                </Title>
+
+            </Container>
+            <ItemSeparator/>
+        </>
     )
 }

@@ -32,6 +32,7 @@ export function Pokemons() {
 
     return (
         <Container>
+
             <Header title="Pokedev" />
             <Description title="Lista de Pokémons" />
             <FlatList
@@ -39,7 +40,8 @@ export function Pokemons() {
                 keyExtractor={(item) => item.name}
                 renderItem={({ item }) => <PokemonCard title={item.name} />}
                 contentContainerStyle={pokemons.length === 0 && { flex: 1 }}
-                // ListEmptyComponent={() => <ListEmpty message="Que tal cadastrar a primeira turma?" />}
+                
+            // ListEmptyComponent={() => <ListEmpty message="Que tal cadastrar a primeira turma?" />}
             />
         </Container>
     )

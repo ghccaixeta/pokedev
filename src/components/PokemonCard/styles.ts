@@ -10,6 +10,7 @@ export const Container = styled(TouchableOpacity)`
     background-color: ${({ theme }) => theme.COLORS.WHITE};
     border-radius: 0px;
     
+    
 
     flex-direction: row;
     align-items: center;
