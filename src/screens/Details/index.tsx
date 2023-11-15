@@ -7,6 +7,8 @@ import { api } from "@services/api";
 import { Alert } from "react-native";
 import { PokemonDTO } from "src/dtos/PokemonDTO";
 import { DetailHeader } from "@components/DetailHeader";
+import { Abilities } from "@components/Abilities";
+import { Moviments } from "@components/Moviments";
 
 type RouteParamsProps = {
     url: string;
@@ -26,7 +28,8 @@ export function Details() {
             const response = await api.get(url);
             
             setPokemon(response.data);
-                      
+
+
 
         } catch (error) {
             return Alert.alert("Oops!", "Ocorreu um erro. Tente novamente mais tardes.")
@@ -37,13 +40,15 @@ export function Details() {
 
     useEffect(() => {
         fetchPokemonDetails();
-    }, [pokemon.id])
+    },[pokemon.id])
 
     return (
         <Container>
             <Header title="Pokedev" />
             <Description title="Detalhes do Pokémon" />
             <DetailHeader url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} title="Nome:" name={pokemon.name}  />
+            <Abilities pokemon={pokemon} />
+            <Moviments pokemon={pokemon} />
             
         </Container>
     )
