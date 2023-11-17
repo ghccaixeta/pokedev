@@ -1,4 +1,6 @@
 import { AbilitiesDTO } from "./AbilitiesDTO"
+import { MoveDTO } from "./MoveDTO"
+import { MovesDTO } from "./MovesDTO"
 import { SpritesDTO } from "./SpritesDTO"
 
 export type PokemonDTO = {
@@ -7,7 +9,7 @@ export type PokemonDTO = {
     url: string,
     sprites: SpritesDTO,
     abilities: Array<AbilitiesDTO>,
-    moves: Array<string>[]
+    moves: Array<MovesDTO>
 
 
 
