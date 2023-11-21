@@ -29,3 +29,30 @@ export const ListOfAbilities = styled.Text`
     margin-top: 5px;
 
 `
+
+export const View = styled.View`
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+`
+
+export const Moviment = styled.View`
+
+    align-items: center;
+    padding: 4px 10px 8px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+    background-color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+`
+
+export const Text = styled.Text`
+
+    color: ${({ theme }) => theme.COLORS.BLACK};
+    font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
+    font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+    
+
+`

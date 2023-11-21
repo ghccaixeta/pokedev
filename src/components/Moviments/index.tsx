@@ -1,9 +1,7 @@
 import { PokemonDTO } from "src/dtos/PokemonDTO";
-import { Container, Title, ListOfAbilities } from "./styles";
+import { Container, Title, View, Moviment, Text } from "./styles";
 import { useEffect, useState } from "react";
 import { MoveDTO } from "src/dtos/MoveDTO";
-import { MovesDTO } from "src/dtos/MovesDTO";
-import { FlatList, Text } from "react-native";
 
 type Props = {
     pokemon: PokemonDTO
@@ -16,6 +14,7 @@ export function Moviments({ pokemon }: Props) {
     function getMoviments() {
         const moviment = pokemon.moves?.map(item => item.move);
         setMoviments(moviment)
+
     }
 
     useEffect(() => {
@@ -25,20 +24,16 @@ export function Moviments({ pokemon }: Props) {
     return (
         <Container>
             <Title>Movimentos:</Title>
-            <FlatList
-                data={moviments}
-                keyExtractor={item => item.name}
-                renderItem={({ item }) => (
-                    <Text>{item.name}</Text>
-                )}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                _contentContainerStyle={{ px: 8 }}
-                my={10}
-                maxH={10}
-                minH={10}
-            />
+            <View>
+                {moviments?.map((item) => (
+                    <View key={item.name}>
+                        <Moviment>
+                            <Text>{item.name}</Text>
+                        </Moviment>
+                    </View>
+                ))}
+            </View>
         </Container>
     )
 
-} 
+}
