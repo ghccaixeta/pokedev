@@ -11,19 +11,17 @@ type Props = TouchableOpacityProps & {
 
 export function PokemonCard({ title, ...rest }: Props) {
     return (
-        <>
-            <Container {...rest}>
-                
-                <Title>
-                    {title}
-                </Title>
+        <Container {...rest}>
 
-                <ForwardIcon></ForwardIcon>
+            <Title>
+                {title}
+            </Title>
 
-                
+            <ForwardIcon></ForwardIcon>
 
-            </Container>
-            <ItemSeparator/>
-        </>
+
+
+        </Container>
+
     )
 }

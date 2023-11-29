@@ -11,13 +11,13 @@ export const Container = styled(TouchableOpacity)`
     background-color: ${({ theme }) => theme.COLORS.WHITE};
     border-radius: 0px;
     
-    
-
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
-    padding: 14px;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: ${({ theme }) => theme.COLORS.GRAY_500};
 
 `
 
@@ -32,7 +32,7 @@ font-family: ${theme.FONT_FAMILY.REGULAR};
 
 `
 
-export const ForwardIcon = styled(CaretRight).attrs(({ theme })=>({
+export const ForwardIcon = styled(CaretRight).attrs(({ theme }) => ({
     size: 36,
     color: theme.COLORS.BLUE_700,
     weight: "bold",

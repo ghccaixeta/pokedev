@@ -25,13 +25,16 @@ export function Moviments({ pokemon }: Props) {
         <Container>
             <Title>Movimentos:</Title>
             <View>
-                {moviments?.map((item) => (
+                {moviments?.slice(0, 4).map((item) => (
                     <View key={item.name}>
                         <Moviment>
                             <Text>{item.name}</Text>
                         </Moviment>
                     </View>
                 ))}
+                <Moviment>
+                    <Text>...</Text>
+                </Moviment>
             </View>
         </Container>
     )

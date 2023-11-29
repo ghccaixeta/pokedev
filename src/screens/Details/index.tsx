@@ -44,7 +44,7 @@ export function Details() {
 
     return (
         <Container>
-            <Header title="Pokedev" />
+            <Header title="Pokedev" showBackButton />
             <Description title="Detalhes do Pokémon" />
             <DetailHeader url={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} title="Nome:" name={pokemon.name}  />
             <Abilities pokemon={pokemon} />
