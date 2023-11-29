@@ -47,8 +47,7 @@ export function Pokemons() {
                     keyExtractor={(item) => item.name}
                     renderItem={({ item }) => <PokemonCard title={item.name} onPress={() => handleOpenPokemonDetails(item.url)} />}
                     contentContainerStyle={pokemons.length === 0 && { flex: 1 }}
-
-                // ListEmptyComponent={() => <ListEmpty message="Que tal cadastrar a primeira turma?" />}
+                    showsVerticalScrollIndicator={false}
                 />
             </Body>
         </Container>

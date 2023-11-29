@@ -17,7 +17,7 @@ export const Container = styled(TouchableOpacity)`
 
     border-width: 0px 0px 1px 0px;
     border-style: solid;
-    border-color: ${({ theme }) => theme.COLORS.GRAY_500};
+    border-color: ${({ theme }) => theme.COLORS.GRAY_300};
 
 `
 

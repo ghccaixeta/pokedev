@@ -1,6 +1,5 @@
 import { TouchableOpacityProps, View } from 'react-native';
 import { Container, ForwardIcon, Title } from './styles'
-import { ItemSeparator } from '@components/ItemSeparator';
 
 //Com o TouchableOpacityProps conseguimos utilizar as propiedades de um botão
 type Props = TouchableOpacityProps & {
