@@ -15,12 +15,16 @@ export function Pokemons() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [pokemons, setPokemons] = useState<PokemonDTO[]>([]);
+    const [previous, setPrevious] = useState<string>('');
+    const [next, setNext] = useState<string>('');
     const navigation = useNavigation<AppNavigatorRoutesProps>();
 
-    async function fetchPokemons() {
+    async function fetchPokemons(offset: string | null) {
         try {
-            const response = await api.get('/pokemon', { params: { limit: 20 } });
+            const response = await api.get('/pokemon', { params: { offset ,limit: 20 } });
             setPokemons(response.data.results)
+            setPrevious(response.data.previous)
+            setNext(response.data.next)
         } catch (error) {
             return Alert.alert("Oops!", "Ocorreu um erro. Tente novamente mais tarde.")
         } finally {
@@ -32,8 +36,19 @@ export function Pokemons() {
         navigation.navigate('details', { url })
     }
 
+    function setNextPage() {
+        var params = next.split('?')[1]
+        var offsetParam = params.split('&')
+        var offset = offsetParam[0].match(/\d+/)?.toString() ?? '0'
+
+        fetchPokemons(offset)
+
+        
+        
+    }
+
     useFocusEffect(useCallback(() => {
-        fetchPokemons();
+        fetchPokemons(null);
     }, []))
 
     return (
@@ -48,6 +63,7 @@ export function Pokemons() {
                     renderItem={({ item }) => <PokemonCard title={item.name} onPress={() => handleOpenPokemonDetails(item.url)} />}
                     contentContainerStyle={pokemons.length === 0 && { flex: 1 }}
                     showsVerticalScrollIndicator={false}
+                    onEndReached={setNextPage}
                 />
             </Body>
         </Container>
